@@ -1,0 +1,61 @@
+<div>
+  <h5 class="mx-4 my-2">Filters</h5>
+  <div mat-dialog-content>
+
+    <div class="form">
+      <i class="fa fa-search"></i>
+      <input type="text" class="form-control form-input" placeholder="Search companies...">
+    </div>
+
+    <div class="my-4">
+      <div class="my-3 mb-2 mt-2 border-bottom" *ngFor="let item of items,let index=index">
+        
+        <div class="d-flex justify-content-between ">
+        <h6 class="cursor-pointer" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + cssClassByIndex(index)" aria-expanded="false"
+          aria-controls="collapseExample">
+          {{item.title}}
+        </h6>
+        
+        
+      </div>
+
+        <div class="collapse bg-light" id="{{cssClassByIndex(index)}}">
+          <div class="my-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="isAnyOf">
+              <label class="form-check-label my-1" for="isAnyOf">
+                is any of
+              </label>
+              <input type="text" class="form-control form-input" placeholder="Enter company names...">
+              <input class="form-check-input" type="checkbox" value="" id="isNotAnyOf">
+              <label class="form-check-label my-1" for="isNotAnyOf">
+                Is not any of
+              </label>
+              <br>
+              <input class="form-check-input" type="checkbox" value="" id="isknown">
+              <label class="form-check-label my-1" for="isknown">
+                Is Known
+              </label>
+              <br>
+              <input class="form-check-input" type="checkbox" value="" id="isUnknown">
+              <label class="form-check-label my-1" for="isUnknown">
+                Is Unknown
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div mat-dialog-actions>
+    
+    <!-- <button mat-button type="button" class="btn btn-primary">Show More Filters</button> -->
+    <button mat-button mat-dialog-close type="button" class="btn btn-light">Cancel</button>
+    <button mat-button mat-dialog-close type="button" class="btn btn-primary" >Apply</button>
+    
+
+  </div>
+</div>
